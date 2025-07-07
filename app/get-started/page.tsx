@@ -1,6 +1,7 @@
 'use client';
 
 const GetStarted = () => {
+  console.log('Get started');
   return (
     <div>
       <main className="p-6">

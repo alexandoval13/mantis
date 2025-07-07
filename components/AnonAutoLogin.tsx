@@ -27,7 +27,10 @@ export default function AnonAutoLogin() {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
       if (session) {
-        console.log('User signed in');
+        const log = session.user.is_anonymous
+          ? 'anonymous user signed in'
+          : 'user found';
+        console.log(`${log}\n`, session);
       }
     });
 
